@@ -1,0 +1,36 @@
+.toast{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 48px;
+    border-radius: 4px;
+    font-size: 13px;
+    box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.16);
+    font-family: GoogleSans-Regular;
+    padding: 4px 8px;
+}
+.toast>i{
+    font-size: 24px;
+    min-width: 24px;
+    text-align: center;
+}
+.toast>i:first-child
+{
+    margin-right: 16px;
+}
+.toast>i:last-child
+{
+    margin-left: 40px;
+}
+.toast-warn>i{
+    color:#f34545
+}
+.toast-info>i{
+    color:#f2c65e
+}
+.toast-check>i{
+    color:#57f8c0
+}
+.toast-question>i{
+    color:#57a1f5
+}

@@ -1,0 +1,19 @@
+
+.dashboard__data::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;              /* Chiều rộng vùng chứa scrollbar */
+  }
+.dashboard__data::-webkit-scrollbar-track {
+    background: #ccc;        /* Màu nền ngoài của thanh scrollbar */
+  }
+.dashboard__data::-webkit-scrollbar-thumb {
+    background-color: #019160;    /* Màu của thanh cuộn (scroll thumb) */
+    border-radius: 5px;       /* Bo góc scroll thumb */
+    border: 2px solid #ccc;  /* Không hỗ trợ padding, margin, transition nên dùng viền cùng màu nên để padding scroll thumb */
+  }
+/* .dashboard__data::-webkit-scrollbar-thumb:hover {
+}Hiệu ứng di chuột đổi màu */
+.dashboard__data{ /*cho Firefox*/
+      scrollbar-width: thin;          /* "auto" hoặc "thin" */
+      scrollbar-color: #019160 #ccc;   /* scroll thumb and track */
+}
