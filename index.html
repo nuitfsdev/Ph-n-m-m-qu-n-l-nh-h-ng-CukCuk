@@ -149,7 +149,7 @@
             <div class="modal__layer">
             </div>
             <form class="modal__container">
-                <img src="/assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
+                <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
                 <div class="modal__container-header">Thông tin nhân viên</div>
                 <div class="modal__container-body">
                     <div class="container__body-avatar">
@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="body__infor-item">
                                     <label for="" class="">Họ và tên(<label style="color: red;">*</label>)</label>
-                                    <input type="text" value="" propValue="FullName">
+                                    <input type="text" value="" propValue="FullName" required>
                                 </div>
                         
                                 <div class="body__infor-item">
@@ -187,7 +187,7 @@
                                 </div>
                                 <div class="body__infor-item">
                                     <label for="" class="">Số CMTND/Căn cước(<label style="color: red;">*</label>)</label>
-                                    <input type="number" value="" propValue="IdentityNumber">
+                                    <input type="number" value="" propValue="IdentityNumber" required>
                                 </div>
                                 <div class="body__infor-item">
                                     <label for="" class="">Ngày cấp</label>
@@ -278,7 +278,7 @@
             <div class="modal__layer">
             </div>
             <div class="modal__container">
-                <img src="/assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
+                <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
                 <div class="modal__container-header">Thông báo</div>
                 <div class="modal__container-body">
                     Đã chỉnh sửa thông tin nhân viên thành công
@@ -295,7 +295,7 @@
             <div class="modal__layer">
             </div>
             <div class="modal__container">
-                <img src="/assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
+                <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
                 <div class="modal__container-header">Thông báo</div>
                 <div class="modal__container-body">
                     Đã thêm nhân viên mới thành công!
@@ -313,7 +313,7 @@
             <div class="modal__layer">
             </div>
             <div class="modal__container">
-                <img src="/assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
+                <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
                 <div class="modal__container-header">Thông báo</div>
                 <div class="modal__container-body">
                     Vui lòng chọn nhân viên cần xóa!
@@ -331,10 +331,31 @@
             <div class="modal__layer">
             </div>
             <div class="modal__container">
-                <img src="/assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
+                <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
                 <div class="modal__container-header">Thông báo</div>
                 <div class="modal__container-body">
                     Bạn có chắc chắn xóa nhân viên này!
+                </div>
+                <div class="modal__container-footer">
+                    <label class="btn modal__container-footer-cancel">
+                        Hủy
+                    </label>
+                    <button class="btn modal__container-footer-save btnOK bntOK--Delete">
+                        OK
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+        <!-- Validate form -->
+        <div class="modal modal__anouncement modal__anouncement--validate-form" style="z-index: 9;" hidden>
+            <div class="modal__layer">
+            </div>
+            <div class="modal__container">
+                <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
+                <div class="modal__container-header">Thông báo</div>
+                <div class="modal__container-body">
+                    Vui lòng điền đầy đủ các thông tin có dấu (<label style="color: red;">*</label>) !
                 </div>
                 <div class="modal__container-footer">
                     <label class="btn modal__container-footer-cancel">

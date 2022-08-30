@@ -23,6 +23,21 @@ function initEvent(){
         });
 
     })
+     $('input[required]').blur(function() {
+        // Lấy ra value:
+        var value = this.value;
+        // Kiểm tra value:
+        if (!value) {
+            // ĐẶt trạng thái tương ứng:
+            // Nếu value rỗng hoặc null thì hiển thị trạng thái lỗi:
+            $(this).addClass("input--error");
+            $(this).attr('title', "Thông tin này không được phép để trống");
+        } else {
+            // Nếu có value thì bỏ cảnh báo lỗi:
+            $(this).removeClass("input--error");
+            $(this).removeAttr('title');
+        }
+    })
     $(".modal__container-exit").click(function (){
         $(this).parents(".modal").hide();
     })
@@ -61,6 +76,23 @@ function initEvent(){
         });
     });
     //---------
+    // Validate form
+    $('input[required]').blur(function() {
+        // Lấy ra value:
+        let value = this.value;
+        // Kiểm tra value:
+        if (!value) {
+            // ĐẶt trạng thái tương ứng:
+            // Nếu value rỗng hoặc null thì hiển thị trạng thái lỗi:
+            $(this).addClass("input--error");
+            $(this).attr('title', "Thông tin này không được phép để trống");
+        } else {
+            // Nếu có value thì bỏ cảnh báo lỗi:
+            $(this).removeClass("input--error");
+            $(this).removeAttr('title');
+        }
+    })
+    //---------------
     //Rút gọn menu
     $(".dasboard__heading__icon").click(()=>{
         $(".dashboard__category-title").toggleClass("disable");
@@ -102,8 +134,23 @@ function initEvent(){
     //Lưu
     $("#btnSave").click((event)=>{
         event.preventDefault();
+        let validateform=true;
         console.log(employeeId)
-        saveData();
+        let inputs=$('input[required]')
+        for( var input of inputs)
+        {
+            let value =input.value;
+            if(!value){
+                validateform=false;
+            }
+        }
+        if(validateform==true)
+        {
+            saveData();
+        }
+        else{
+            $(".modal__anouncement--validate-form").show()
+        }
     });
     //----------
 }

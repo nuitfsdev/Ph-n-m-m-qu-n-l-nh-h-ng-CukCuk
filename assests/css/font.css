@@ -1,20 +1,20 @@
 @font-face {
     font-family: GoogleSans-Bold ;
-    src: url(/assests/font/GoogleSans-Bold.otf);
+    src: url("/assests/font/GoogleSans-Bold.otf");
 }
 @font-face {
     font-family: GoogleSans-Medium;
-    src: url(/assests/font/GoogleSans-Medium.otf);
+    src: url("/assests/font/GoogleSans-Medium.otf");
 }
 @font-face {
     font-family: GoogleSans-Regular;
-    src: url(/assests/font/GoogleSans-Regular.otf);
+    src: url("/assests/font/GoogleSans-Regular.otf");
 }
 @font-face {
     font-family: GoogleSans-MediumItalic ;
-    src: url(/assests/font/GoogleSans-MediumItalic.otf);
+    src: url("/assests/font/GoogleSans-MediumItalic.otf");
 }
 @font-face {
     font-family: GoogleSans-Thin;
-    src: url(/assests/font/GoogleSans-Thin.otf);
+    src: url("/assests/font/GoogleSans-Thin.otf");
 }

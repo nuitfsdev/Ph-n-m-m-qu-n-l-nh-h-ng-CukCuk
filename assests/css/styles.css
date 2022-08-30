@@ -343,3 +343,6 @@ tbody tr:hover{
     background-color: #019160 !important;
     color: #fff;
 }
+.input--error{
+    outline: 1px solid red;
+}
