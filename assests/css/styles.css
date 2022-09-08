@@ -295,10 +295,10 @@ tbody tr:hover{
 
 }
 .dashboard__pagination-first{
-    background: url('/assests/icon/btn-firstpage.svg') no-repeat center;
+    background: url('../../assests/icon/btn-firstpage.svg') no-repeat center;
 }
 .dashboard__pagination-previous{
-    background: url('/assests/icon/btn-prev-page.svg') no-repeat center;
+    background: url('../../assests/icon/btn-prev-page.svg') no-repeat center;
    
 
 }
@@ -318,12 +318,12 @@ tbody tr:hover{
 
 } */
 .dashboard__pagination-next{
-    background: url('/assests/icon/btn-next-page.svg') no-repeat center;
+    background: url('../../assests/icon/btn-next-page.svg') no-repeat center;
     
 
 }
 .dashboard__pagination-last{
-    background: url('/assests/icon/btn-lastpage.svg') no-repeat center;
+    background: url('../../assests/icon/btn-lastpage.svg') no-repeat center;
 }
 .dashboard__pagination-current{
     background-color: #019160;
