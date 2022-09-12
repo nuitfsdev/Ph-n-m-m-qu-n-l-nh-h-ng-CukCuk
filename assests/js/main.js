@@ -176,6 +176,14 @@ function initEvent(){
     })
     //Chuyển trang
     $(".dashboard__pagination-previous").click(function(){
+        if(pageNumber<totalPage){
+            for(let i=(((pageNumber+1)%4)+1); i<=4 ; i++)
+            {
+                let tmp=i;
+                tmp=tmp==4?0:i;
+                $(`button[index=${tmp}]`).show();
+            }
+        }
         if(pageNumber>1){
             pageNumber--;
             if(pageNumber%4==0)
@@ -189,11 +197,14 @@ function initEvent(){
                 $('.dashboard__pagination-three').text(btnPagingThree);
                 $('.dashboard__pagination-four').text(btnPagingFour);
             }
+            $(`button[index=${((pageNumber+1)%4)}]`).removeClass("dashboard__pagination-current")
+            $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
             console.log(pageNumber);
             loadData();
         }
     })
     $(".dashboard__pagination-next").click(function(){
+        
         if(pageNumber<totalPage){
             pageNumber++;
             if(pageNumber%4==1)
@@ -207,22 +218,89 @@ function initEvent(){
                 $('.dashboard__pagination-three').text(btnPagingThree);
                 $('.dashboard__pagination-four').text(btnPagingFour);
             }
+            $(`button[index=${((pageNumber-1)%4)}]`).removeClass("dashboard__pagination-current")
+            $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
             console.log(pageNumber);
             loadData();
         }
+        if(pageNumber==totalPage){
+            for(let i=((pageNumber%4)+1); i<=4 ; i++)
+            {
+                let tmp=i;
+                tmp=tmp==4?0:i;
+                $(`button[index=${tmp}]`).hide();
+            }
+        }
     })
+    
     $(".dashboard__pagination-first").click(function(){
        pageNumber=1;
+       $('.dashboard__pagination-one').text(pageNumber);
+       $('.dashboard__pagination-two').text(pageNumber+1);
+       $('.dashboard__pagination-three').text(pageNumber+2);
+       $('.dashboard__pagination-four').text(pageNumber+3);
+       $(`button[index]`).removeClass("dashboard__pagination-current")
+       $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
+       if(pageNumber<totalPage){
+        for(let i=(((pageNumber+1)%4)+1); i<=4 ; i++)
+        {
+            let tmp=i;
+            tmp=tmp==4?0:i;
+            $(`button[index=${tmp}]`).show();
+        }
+    }
        loadData();
     })
     $(".dashboard__pagination-last").click(function(){
         pageNumber=totalPage;
+        switch(pageNumber%4){
+            case 1: 
+                $('.dashboard__pagination-one').text(pageNumber);
+                $('.dashboard__pagination-two').text(pageNumber+1);
+                $('.dashboard__pagination-three').text(pageNumber+2);
+                $('.dashboard__pagination-four').text(pageNumber+3);
+                break;
+            case 2:
+                $('.dashboard__pagination-one').text(pageNumber-1);
+                $('.dashboard__pagination-two').text(pageNumber);
+                $('.dashboard__pagination-three').text(pageNumber+1);
+                $('.dashboard__pagination-four').text(pageNumber+2);
+                break;
+            case 3:
+                $('.dashboard__pagination-one').text(pageNumber-2);
+                $('.dashboard__pagination-two').text(pageNumber-1);
+                $('.dashboard__pagination-three').text(pageNumber);
+                $('.dashboard__pagination-four').text(pageNumber+1);
+                break;
+            case 0:
+                $('.dashboard__pagination-one').text(pageNumber-3);
+                $('.dashboard__pagination-two').text(pageNumber-2);
+                $('.dashboard__pagination-three').text(pageNumber-1);
+                $('.dashboard__pagination-four').text(pageNumber);
+                break;
+            default:
+                break;
+        }
+        $(`button[index]`).removeClass("dashboard__pagination-current")
+        $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
+        if(pageNumber==totalPage){
+            for(let i=((pageNumber%4)+1); i<=4 ; i++)
+            {
+                let tmp=i;
+                tmp=tmp==4?0:i;
+                $(`button[index=${tmp}]`).hide();
+            }
+        }
         loadData();
      })
     //Click vào số trang
     $(".btn__paging").click(function () {
         $(this).siblings().removeClass('dashboard__pagination-current');
         this.classList.add("dashboard__pagination-current");
+        pageNumber=Number($(this).text());
+        console.log(pageNumber);
+        loadData();
+       
     })
     
 
@@ -236,25 +314,28 @@ function initEvent(){
         if (!value) {
             //Nếu value bằng null thì thêm cảnh báo lỗi
             $(this).addClass("input--error");
-            $(this).attr('title', "Thông tin này không được phép để trống");
-        } else {
+            $(this).attr("title", "Thông tin này không được phép để trống");
+        } else 
+        {
             // Nếu có value thì bỏ cảnh báo lỗi:
             $(this).removeClass("input--error");
-            $(this).removeAttr('title');
+            $(this).removeAttr("title");
             //Kiểm tra format email nếu input có type là email
-            if(this.type==="email"){
-                let valueEmail=$(this).val();
+            if($(this).attr("type")==="email"){
+                let valueEmail=this.value;
+                console.log(valueEmail);
+                console.log(checkEmailFormat(valueEmail));
                 if(!checkEmailFormat(valueEmail))
                 {
-                    $(this).addClass("input--error");
-                    $(this).attr('title', "Vui lòng nhập đúng định dạng email!");
-                } else 
+                    $(".error-email").text("Email không đúng định dạng");
+                }else
                 {
-                    $(this).removeClass("input--error");
-                    $(this).removeAttr('title');
+                    $(".error-email").text("");
                 }
             }
+
         }
+        
     })
 
     //Ngày chọn không lớn hiện tại
@@ -331,6 +412,12 @@ function initEvent(){
             if(!value){
                 validateform=false;
             }
+        }
+        if($(".error-email").text() !=="")
+        {
+            validateform=false;
+            alert("Vui lòng điền email đúng định dạng!");
+            return;
         }
         if(validateform==true)
         {
