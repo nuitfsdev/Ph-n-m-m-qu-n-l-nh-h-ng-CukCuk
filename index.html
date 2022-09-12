@@ -23,29 +23,35 @@
             </div>
             <div class="dashboard__category-list">
                 <div class="dashboard__category-item ">
-                    <img src="./assests/icon/dashboard.png" alt="" class="dashboard__category-icon">
+                    <!-- <img src="./assests/icon/dashboard.png" alt="" class="dashboard__category-icon"> -->
+                    <i class="fas fa-chart-pie"></i>
                     <p class="dashboard__category-title">Tổng quan</p>
                 </div>
                 <div class="dashboard__category-item">
-                    <img src="./assests/icon/report.png" alt="" class="dashboard__category-icon">
+                    <!-- <img src="./assests/icon/report.png" alt="" class="dashboard__category-icon"> -->
+                    <i class="fas fa-chart-bar"></i>
                     <p class="dashboard__category-title">Báo cáo</p>
                 </div>
                 <div class="dashboard__category-item">
-                    <img src="./assests/icon/dashboard.png" alt="" class="dashboard__category-icon">
+                    <!-- <img src="./assests/icon/dashboard.png" alt="" class="dashboard__category-icon"> -->
+                    <i class="fas fa-shopping-basket"></i>
                     <p class="dashboard__category-title">Mua hàng</p>
                 </div>
                 <div class="dashboard__category-item dashboard__category-item-selected ">
-                    <img src="./assests/icon//dic-employee.png" alt="" class="dashboard__category-icon">
+                    <!-- <img src="./assests/icon//dic-employee.png" alt="" class="dashboard__category-icon"> -->
+                    <i class="fas fa-users"></i>
                     <p class="dashboard__category-title">Danh mục nhân viên</p>
                 </div>
                 <div class="dashboard__category-item">
-                    <img src="./assests/icon/setting.png" alt="" class="dashboard__category-icon">
+                    <!-- <img src="./assests/icon/setting.png" alt="" class="dashboard__category-icon"> -->
+                    <i class="fa fa-cog"></i>
                     <p class="dashboard__category-title">Thiết lập hệ thống</p>
                 </div>
             </div>
 
         </div>
         <!-- Information -->
+            <!-- Header -->
         <div class="dashboard__info">
             <div class="dashboard__info-heading">
                 <div class="dashboard__info-heading-selection">
@@ -62,6 +68,7 @@
                     <img src="./assests/icon/option.png" alt="" class="dashboard__account-option">
                 </div>
             </div>
+            <!-- Data -->
             <div class="dashboard__info-data">
                 <div class="dashboard__data-title">
                     <label for="" >Danh sách nhân viên</label>
@@ -78,18 +85,26 @@
                         </div>
                         <select name="" id="" class="dashboard__filter-department">
                             <option value="">Tất cả Phòng ban</option>
-                            <option value="">Phòng ban 1</option>
-                            <option value="">Phòng ban 2</option>
+                            <option value="3f8e6896-4c7d-15f5-a018-75d8bd200d7c">Phòng Công Nghệ Thông Tin</option>
+                            <option value="45ac3d26-18f2-18a9-3031-644313fbb055">Phòng Hành Chính</option>
+                            <option value="78aafe4a-67a7-2076-3bf3-eb0223d0a4f7">Phòng Nhân Sự</option>
+                            <option value="7c4f14d8-66fb-14ae-198f-6354f958f4c0">Phòng Kế Toán</option>
                         </select>
-                        <select name="" id="" class="dashboard__filter-postion">
+                        <select name="" id="" class="dashboard__filter-position">
                             <option value="">Tất cả Vị trí</option>
-                            <option value="">Vị trí 1</option>
-                            <option value="">Vị trí 2</option>
+                            <option value="30d41e52-5e66-72bc-6c1c-b47866e0b131">Trưởng phòng</option>
+                            <option value="548dce5f-5f29-4617-725d-e2ec561b0f41">Quản trị hệ thống</option>
+                            <option value="589edf01-198a-4ff5-958e-fb52fd75a1d4">Nhân viên</option>
+                            <option value="5bd71cda-209f-2ade-54d1-35c781481818">Trưởng nhóm</option>
+                            <option value="68daa090-552d-1bc6-e8e4-8adc5263917a">Giám đốc</option>
                         </select>
                     </div>
                     <div style="display: flex;">
-                        <button class="btn btnDelete" style="margin-right: 16px; background-color: red;">
+                        <button class="btn btnDelete" style="margin-right: 14px; background-color: red;">
                             <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <button class="btn btnDuplicate" style="margin-right: 14px; background-color: #ccc;">
+                            <i class="fas fa-copy"></i>
                         </button>
                         <img src="./assests/icon/refresh.png" alt="" class="dashboard__filter-refresh">
                     </div>
@@ -98,16 +113,16 @@
                         <table id="data__EmployeeList">
                             <thead>
                                 <th propValue="Sort" style="width: 20px">STT</th>
-                                <th propValue="EmployeeCode" style="width: 100px">Mã nhân viên</th>
-                                <th propValue="FullName" style="width: 100px">Họ tên</th>
-                                <th propValue="GenderName" style="width: 50px">Giới tính</th>
-                                <th propValue="DateOfBirth" format="date" style="width: 80px">Ngày sinh</th>
-                                <th propValue="PhoneNumber" style="width: 50px;">Điện thoại</th>
+                                <th propValue="EmployeeCode" style="width: 50px">Mã nhân viên</th>
+                                <th propValue="FullName" style="width: 50px">Họ tên</th>
+                                <th propValue="GenderName" style="width: 30px">Giới tính</th>
+                                <th propValue="DateOfBirth" format="date" style="width: 30px">Ngày sinh</th>
+                                <th propValue="PhoneNumber" style="width: 30px;">Điện thoại</th>
                                 <th propValue="Email" style="width: 50px">Email</th>
-                                <th propValue="PositionName" style="width: 100px">Chức vụ</th>
-                                <th propValue="DepartmentName" style="width: 150px">Phòng ban</th>
-                                <th propValue="Salary" format="money" style="width: 100px; text-align: right;">Mức lương cơ bản</th>
-                                <th propValue="WorkStatus" style="width: 100px">Tình trạng công việc</th>
+                                <th propValue="PositionName" style="width: 50px">Chức vụ</th>
+                                <th propValue="DepartmentName" style="width: 80px">Phòng ban</th>
+                                <th propValue="Salary" format="money" style="width: 50px; text-align: right;">Mức lương cơ bản</th>
+                                <th propValue="WorkStatus" style="width: 50px">Tình trạng công việc</th>
                             </thead>
                             <tbody>
                                 <tr>
@@ -127,23 +142,25 @@
                             </tbody>
                         </table>
                 </div>
+                <!-- Paging -->
                 <div class="dashboard__pagination">
-                    <p class="dashboard__pagination-show">Hiển thị 1-10/1000 nhân viên</p>
+                    <p class="dashboard__pagination-show">Hiển thị 1-20/100 nhân viên</p>
                     <div class="dashboard__pagination-direct">
                         <button class="dashboard__pagination-first"></button>
                         <button class="dashboard__pagination-previous"></button>
-                        <button class="dashboard__pagination-one dashboard__pagination-current">1</button>
-                        <button class="dashboard__pagination-two">2</button>
-                        <button class="dashboard__pagination-three">3</button>
-                        <button class="dashboard__pagination-four">4</button>
+                        <button class="btn__paging dashboard__pagination-one dashboard__pagination-current">1</button>
+                        <button class="btn__paging dashboard__pagination-two">2</button>
+                        <button class="btn__paging dashboard__pagination-three">3</button>
+                        <button class="btn__paging dashboard__pagination-four">4</button>
                         <button class="dashboard__pagination-next"></button>
                         <button class="dashboard__pagination-last"></button>
                     </div>
-                    <p class="dashboard__pagination-show2">10 nhân viên/trang</p>
+                    <p class="dashboard__pagination-show2">20 nhân viên/trang</p>
 
                 </div>
             </div>
         </div>
+        <!-- Modal -->
         <!-- Thông tin nhân viên -->
         <div class="modal modal-employee-information" id="modal__employee" hidden>
             <div class="modal__layer">
@@ -250,10 +267,8 @@
                                 <div class="body__infor-item">
                                     <label for="" class="">Tình trạng công việc</label>
                                     <select name="" id="" propValue="WorkStatus">
-                                        <!-- <option value="0">Đang làm việc</option>
                                         <option value="1">Đang thử việc</option>
-                                        <option value="2">Đang tạm thời nghỉ việc</option>
-                                        <option value="">Khác</option> -->
+                                        <option value="2">Đang làm việc</option>
                                     </select>
                                 </div>
                             </div>
@@ -273,7 +288,8 @@
     
             </form>
         </div>
-        <!-- Thông báo chỉnh sửa -->
+
+        <!-- Thông báo chỉnh sửa thành công -->
         <div hidden class="modal  modal__anouncement modal__anouncement--edit" style="z-index: 9;">
             <div class="modal__layer">
             </div>
@@ -290,6 +306,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Thông báo thêm thành công -->
         <div class="modal modal__anouncement modal__anouncement--add" style="z-index: 9;" hidden>
             <div class="modal__layer">
@@ -308,7 +325,7 @@
     
             </div>
         </div>
-        <!-- Xác nhận  chọn nhân viên cần xóa -->
+        <!-- Yêu cầu  chọn nhân viên cần xóa và nhân bản -->
         <div class="modal modal__anouncement modal__anouncement--delete" style="z-index: 9;" hidden>
             <div class="modal__layer">
             </div>
@@ -316,7 +333,7 @@
                 <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
                 <div class="modal__container-header">Thông báo</div>
                 <div class="modal__container-body">
-                    Vui lòng chọn nhân viên cần xóa!
+                    Vui lòng chọn nhân viên!
                 </div>
                 <div class="modal__container-footer">
                     <button class="btn modal__container-footer-save btnOK">
@@ -326,7 +343,8 @@
     
             </div>
         </div>
-        <!-- Xóa Nhân viên -->
+
+        <!-- Xác nhận xóa Nhân viên -->
         <div class="modal modal__anouncement modal__anouncement--selected-delete" style="z-index: 9;" hidden>
             <div class="modal__layer">
             </div>
@@ -347,7 +365,28 @@
     
             </div>
         </div>
-        <!-- Validate form -->
+        <!-- Nhân bản Nhân viên -->
+        <div class="modal modal__anouncement modal__anouncement--selected-duplicate" style="z-index: 9;" hidden>
+            <div class="modal__layer">
+            </div>
+            <div class="modal__container">
+                <img src="./assests/icon/x.svg" alt="" srcset="" class="modal__container-exit">
+                <div class="modal__container-header">Thông báo</div>
+                <div class="modal__container-body">
+                    Bạn có chắc chắn sao chép nhân viên này!
+                </div>
+                <div class="modal__container-footer">
+                    <label class="btn modal__container-footer-cancel">
+                        Hủy
+                    </label>
+                    <button class="btn modal__container-footer-save btnOK bntOK--Duplicate">
+                        OK
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+        <!--Xác thực form thông tin-->
         <div class="modal modal__anouncement modal__anouncement--validate-form" style="z-index: 9;" hidden>
             <div class="modal__layer">
             </div>
@@ -361,11 +400,21 @@
                     <label class="btn modal__container-footer-cancel">
                         Hủy
                     </label>
-                    <button class="btn modal__container-footer-save btnOK bntOK--Delete">
+                    <button class="btn modal__container-footer-save btnOK">
                         OK
                     </button>
                 </div>
     
+            </div>
+        </div>
+        <!-- Loading -->
+        <div class="modal modal__anouncement modal__anouncement--loading" style="z-index: 9;" hidden>
+            <div class="modal__layer">
+            </div>
+            <div class="modal__container--loading " >
+                <div class="modal__container-body">
+                <img src="./assests/img/loading.webp" alt="" style="width: 50px;">
+                </div>
             </div>
         </div>
     </div>

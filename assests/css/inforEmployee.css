@@ -39,6 +39,9 @@
     cursor: pointer;
     background-color: #ccc;
 }
+.modal__container-exit:hover{
+    background-color: rgb(231, 156, 129);
+}
 .modal__container-header{
     text-align: left;
     text-transform: uppercase;
@@ -193,4 +196,13 @@
     background-color: #eee;
     margin-right: 32px;
     color: #000;
+}
+.modal__anouncement .modal__container{
+    width: fit-content;
+}
+.modal__anouncement .modal__container-body{
+    font-family: GoogleSans-Regular;
+}
+.modal__container--loading{
+    background-color: none;
 }

@@ -1,7 +1,7 @@
 
 .dashboard__data::-webkit-scrollbar {
-    width: 8px; 
-    height: 8px;              /* Chiều rộng vùng chứa scrollbar */
+    width: 10px; 
+    height: 10px;              /* Chiều rộng vùng chứa scrollbar */
   }
 .dashboard__data::-webkit-scrollbar-track {
     background: #ccc;        /* Màu nền ngoài của thanh scrollbar */
