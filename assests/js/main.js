@@ -525,7 +525,6 @@ function loadData(){
                 let ths = $("table#data__EmployeeList thead th");
                 for (const employee of data) 
                 {
-                    console.log(employee);
                     // Duyệt từng cột trong tiêu đề:
                     var trElement = $('<tr></tr>');
                     for (const th of ths) 
@@ -551,9 +550,7 @@ function loadData(){
                                 value = formatDate(value);
                                 break;
                             case "money":
-                                console.log(value);
                                 value = formatMoney(value);
-                                console.log(value);
                                 classAlign = "text-align-right";
                                 break;
                             default:
