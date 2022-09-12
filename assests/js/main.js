@@ -162,16 +162,40 @@ function initEvent(){
     //Tìm kiếm nhân viên theo keyword
     $(".dashboard__filter-search-input").blur(function(){
         searchEmployee=this.value;
+        pageNumber=1;
+        $('.dashboard__pagination-one').text(pageNumber);
+        $('.dashboard__pagination-two').text(pageNumber+1);
+        $('.dashboard__pagination-three').text(pageNumber+2);
+        $('.dashboard__pagination-four').text(pageNumber+3);
+        $(`button[index]`).removeClass("dashboard__pagination-current")
+        $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
+        $(`button[index]`).show();
         loadData();
     })
     //Tìm kiếm nhân viên theo departmentId
     $(".dashboard__filter-department").change(function(){
         departmentFilter=this.value;
+        pageNumber=1;
+        $('.dashboard__pagination-one').text(pageNumber);
+       $('.dashboard__pagination-two').text(pageNumber+1);
+       $('.dashboard__pagination-three').text(pageNumber+2);
+       $('.dashboard__pagination-four').text(pageNumber+3);
+       $(`button[index]`).removeClass("dashboard__pagination-current")
+       $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
+        $(`button[index]`).show();
         loadData();
     })
     //Tìm kiếm nhân viên theo positionId
     $(".dashboard__filter-position").change(function(){
         positionFilter=this.value;
+        pageNumber=1;
+        $('.dashboard__pagination-one').text(pageNumber);
+       $('.dashboard__pagination-two').text(pageNumber+1);
+       $('.dashboard__pagination-three').text(pageNumber+2);
+       $('.dashboard__pagination-four').text(pageNumber+3);
+       $(`button[index]`).removeClass("dashboard__pagination-current")
+       $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
+        $(`button[index]`).show();
         loadData();
     })
     //Chuyển trang
@@ -239,8 +263,8 @@ function initEvent(){
        $('.dashboard__pagination-two').text(pageNumber+1);
        $('.dashboard__pagination-three').text(pageNumber+2);
        $('.dashboard__pagination-four').text(pageNumber+3);
-       $(`button[index]`).removeClass("dashboard__pagination-current")
-       $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
+       $(`button[index]`).removeClass("dashboard__pagination-current");
+       $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current");
        if(pageNumber<totalPage){
         for(let i=(((pageNumber+1)%4)+1); i<=4 ; i++)
         {
@@ -501,6 +525,7 @@ function loadData(){
                 let ths = $("table#data__EmployeeList thead th");
                 for (const employee of data) 
                 {
+                    console.log(employee);
                     // Duyệt từng cột trong tiêu đề:
                     var trElement = $('<tr></tr>');
                     for (const th of ths) 
@@ -526,7 +551,9 @@ function loadData(){
                                 value = formatDate(value);
                                 break;
                             case "money":
+                                console.log(value);
                                 value = formatMoney(value);
+                                console.log(value);
                                 classAlign = "text-align-right";
                                 break;
                             default:
@@ -563,7 +590,6 @@ function loadData(){
             }
     },
     error: function(res) {
-        $("table tbody").empty();
         console.log(res);
     }
     });
