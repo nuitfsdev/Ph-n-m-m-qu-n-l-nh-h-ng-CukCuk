@@ -247,7 +247,7 @@ function initEvent(){
             console.log(pageNumber);
             loadData();
         }
-        if(pageNumber==totalPage){
+        if(pageNumber==(totalPage) && (pageNumber%4)!=0){
             for(let i=((pageNumber%4)+1); i<=4 ; i++)
             {
                 let tmp=i;
@@ -272,7 +272,8 @@ function initEvent(){
             tmp=tmp==4?0:i;
             $(`button[index=${tmp}]`).show();
         }
-    }
+        }
+        //$("button[index]").show();
        loadData();
     })
     $(".dashboard__pagination-last").click(function(){
@@ -307,7 +308,7 @@ function initEvent(){
         }
         $(`button[index]`).removeClass("dashboard__pagination-current")
         $(`button[index=${pageNumber%4}]`).addClass("dashboard__pagination-current")
-        if(pageNumber==totalPage){
+        if(pageNumber==totalPage && (pageNumber%4)!=0){
             for(let i=((pageNumber%4)+1); i<=4 ; i++)
             {
                 let tmp=i;
